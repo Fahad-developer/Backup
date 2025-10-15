@@ -1,0 +1,9 @@
+.bevelOnImg {
+  content: url(/resource/1580984757000/editIconEstimateDetailScreen);
+  display: block;
+}
+.bevelOnImg:active {
+  content: url(/resource/1565090099000/OnClickeditIcon);
+  display: block;
+  overflow: hidden;
+}
