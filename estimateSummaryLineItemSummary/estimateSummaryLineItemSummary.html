@@ -1,0 +1,211 @@
+<template>
+  <template if:true={isLoadedFull}>
+    <lightning-spinner style="position: fixed;" variant="brand" alternative-text="Loading..."></lightning-spinner>
+    <div style="position: fixed;" class="slds-backdrop"></div>
+
+  </template>
+  <div class="slds-theme_default">
+    <div>
+      <!-- <button class="slds-button slds-button_brand slds-m-left_small"
+                  style=" background-color:rgb(29,84,156);" id="refreshBtn" onclick={freshthedata}>refresh</button>  -->
+      </div>  
+      <template if:true={LineItems}>
+      <template for:each={LineItems} for:item="Li" for:index="indexvar">
+        <div class="slds-hint-parent" key={Li.Id}>
+          <div style="background-color:white">
+            <div
+              class="slds-grid slds-p-top_small slds-p-bottom_x-small slds-grid--vertical-align-center slds-grid slds-wrap">
+              <div class="slds-col slds-size_8-of-12">
+                <label
+                  style="display: inline-block; margin-left:3%; color:rgb(55,52,53); font-size:20px; font-weight:700; font-family: 'Segoe UI', Helvetica;">{Li.no}</label>
+                <label
+                  style="display: inline-block; margin-left:2%; color:rgb(55,52,53); font-size:20px; font-weight:700; font-family: 'Segoe UI', Helvetica;">{Li.Name}
+                </label>
+
+
+                <template if:true={Li.serviceType}>
+                  <label
+                    style="display: inline-block; margin-left:4%; color:rgb(55,52,53); font-size:20px; font-weight:400; font-family: 'Segoe UI', Helvetica;">({Li.Service_Quantity__c})</label>
+                  <br />
+                  <label
+                    style="display: inline-block; margin-left:10%; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">{Li.service_name}</label>
+                </template>
+                <template if:false={Li.serviceType}>
+                  <label
+                    style="display: inline-block; margin-left:4%; color:rgb(55,52,53); font-size:20px; font-weight:400; font-family: 'Segoe UI', Helvetica;">({Li.Quantity__c})</label>
+                  <br />
+                  <label
+                    style="display: inline-block; margin-left:10%; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">{Li.product_name}</label>
+                </template>
+
+                <template if:true={Li.isShape}>
+                  <div style="margin-left:10%;">
+                    <img src={Li.shape} width="8%" height="8%" />
+                  </div>
+                </template>
+                <template if:false={Li.isShape}>
+                  <br>
+                  <label
+                    style="display: inline-block; margin-left:10%; color:Rgb(29,84,156); font-size:18px; font-weight:600; font-family: 'Segoe UI', Helvetica;">{Li.shapeText}</label>
+                  <br>
+                </template>
+
+                <label
+                  style="display: inline-block; margin-left:10%; color:rgb(55,52,53); font-size:16px; font-weight:600; font-family: 'Segoe UI', Helvetica;">Dimensions:
+                  &nbsp;</label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">{Li.Dimension}/{Li.measurements}</label>
+
+                <!-- <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">m</label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">&nbsp;
+                  x &nbsp;
+                </label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">{Li.Width__c}</label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">m</label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">&nbsp;
+                  x &nbsp;
+                </label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">{Li.Height__c}</label>
+                <label
+                  style="display: inline-block; color:rgb(55,52,53); font-size:16px; font-weight:400; font-family: 'Segoe UI', Helvetica;">m</label> -->
+              </div>
+              <div class="slds-col slds-size_4-of-12">
+                <div style="display: inline;">
+                  <img data-record-id={Li.Id} class="bevelOnImgDuplicate" onclick={openmodelDuplicate} id={Li.Id}
+                    width="30%" height="30%" />
+                </div>
+                <div style="display: inline; margin-left:3%;">
+                  <img data-record-id={Li.Id} class="bevelOnImgDelete" width="30%" height="30%" onclick={openmodal}
+                    id={Li.Id} />
+                </div>
+                <div style=" display: inline; margin-left:3%;">
+                  <img data-record-id={Li.Id} class="bevelOnImgExpand" width="30%" height="30%" onclick={expand}
+                    id={Li.Id} />
+                </div>
+                
+
+                <br />
+                <br />
+
+                <label
+                  style=" float:right; margin-top:10%; margin-right:4%; color:rgb(55,52,53); font-size:20px; font-weight:700; font-family: 'Segoe UI', Helvetica;">{currencychange}&nbsp;{Li.Grand_Total__c} </label>
+              </div>
+            </div>
+            <div style="height:8%; " class=" slds-grid slds-grid_align-center">
+              <div style="height:1px; width:90%; background-color:rgb(189,191,193);"></div>
+            </div>
+          </div>
+        </div>
+      </template>
+      <template if:true={openmodel}>
+        <div class="demo-only">
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Delete!</h2>
+              </header>
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <center>
+                  <h2><b>Are you sure you want to delete this record?</b></h2><br />
+
+                </center>
+              </div>
+              <footer class="slds-modal__footer" >
+
+                <!-- <button class="slds-button slds-button_inverse slds-m-right_xxx-small"
+                  style=" background-color:rgb(255, 255, 255); border-color:rgb(221, 219, 218); color:rgb(29,84,156);"
+                  onclick={closeModal}><div style="background-color:rgb(29,84,156);">Cancel</div></button>&nbsp;
+                  <button class="slds-button slds-button_inverse slds-m-left_small"
+                    onclick={deleteEstimate}><div style="background-color:rgb(29,84,156);"> Delete</div></button>  -->
+
+                    <div class="slds-align_absolute-center">
+                          <button
+                            class="trybutton trybuttonL slds-m-right_small"
+                            
+                            onclick={closeModal}
+                          >
+                            Cancel
+                          </button>
+                          <button
+                            class="trybutton trybuttonL slds-m-left_small"
+                            
+                            onclick={deleteEstimate}
+                          >
+                          Delete
+                          </button>
+                      </div>
+                      
+                <!-- <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <lightning-button label="Delete" variant="brand" onclick={deleteEstimate}></lightning-button> -->
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+      </template>
+
+      <template if:true={openmodelDuplicatee}>
+        <div class="demo-only">
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true"
+            aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+
+                <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Duplicate Record!</h2>
+              </header>
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                <center>
+                  <h2><b>Are you sure you want to duplicate this record?</b></h2><br />
+
+                </center>
+              </div>
+              <footer class="slds-modal__footer">
+
+                <div class="slds-align_absolute-center">
+                  <button
+                    class="trybutton trybuttonL slds-m-right_small"
+                    
+                    onclick={closeModalDuplicate}
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    class="trybutton trybuttonL slds-m-left_small"
+                    
+                    onclick={duplicateLineItem}
+                  >
+                  Duplicate
+                  </button>
+              </div>
+
+
+                <!-- <button class="slds-button slds-button_brand slds-m-right_xxx-small"
+                  style=" background-color:rgb(255, 255, 255); border-color:rgb(221, 219, 218); color:rgb(29,84,156);"
+                  onclick={closeModalDuplicate}>Cancel</button>&nbsp;
+                <button class="slds-button slds-button_brand slds-m-left_small"
+                  style=" background-color:rgb(29,84,156);" onclick={duplicateLineItem}>Duplicate</button> -->
+
+                <!-- <lightning-button label="Cancel" variant="neutral" onclick={closeModalDuplicate}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <lightning-button label="Duplicate" variant="brand" onclick={duplicateLineItem}></lightning-button> -->
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+      </template>
+
+
+
+
+    </template>
+  </div>
+</template>
