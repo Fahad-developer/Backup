@@ -1,0 +1,77 @@
+.bevelOnImgDelete {
+    content: url(/resource/1580989704000/deleteforestimatesummaryscreen);
+    display: block;
+}
+
+.bevelOnImgDelete:active {
+    content: url(/resource/1564732132000/OnClicks3binbtn);
+    display: block;
+    overflow: hidden;
+}
+
+.trybutton {
+    width: 30%;
+    padding: 2.5%;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    font: size 25px;
+    background-color: rgb(29, 84, 156)
+}
+
+.trybuttonL:active {
+    width: 30%;
+    background-color: white !important;
+    font-weight: bold;
+    color: #1D549C;
+    margin-top: -2px;
+    border: 2px solid rgb(29, 84, 156);
+    padding: 2.5%;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    text-align: center;
+    font: size 25px;
+}
+
+.bevelBox {
+    background-color: rgb(232, 232, 233);
+    color: rgb(29, 84, 156) !important;
+    padding: 1.5% 0%;
+}
+
+.shadowOnClick:active {
+    background-color: white;
+    color: rgb(29, 84, 156);
+    border: 2px solid rgb(29, 84, 156);
+    margin-top: -2px;
+    padding: 1.5% 0%;
+}
+
+.bevelBoxForCusOpp {
+    width: 100%;
+    padding: 2%;
+    font-size: 12px;
+    font-weight: bold;
+    color: rgb(29, 84, 156);
+    border-radius: 8px;
+    text-align: center;
+    font: size 25px;
+    background-color: white;
+}
+
+.shadowOnClickForCusOpp:active {
+    width: 100%;
+    padding: 2%;
+    margin-top: -4px;
+    border: 2px solid white;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+    text-align: center;
+    font: size 25px;
+    background-color: rgb(29, 84, 156);
+}
