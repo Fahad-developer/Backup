@@ -1,0 +1,107 @@
+<template>
+    <div style="width:100%; background-color:white;">
+        <div class="slds-p-top_small">
+            <div style="width:100%;" class="slds-grid slds-wrap">
+
+                <div style="background-color:rgb(71, 189, );" class="slds-col slds-size_1-of-12">
+
+                    <!-- <template if:true={showDot}>
+                        <div class="slds-m-left_x-small slds-m-top_xxx-small">
+                            <img style=" margin:auto; width:60%; height:60%;" src={greendot} />
+                        </div>
+                    </template>
+
+                    <template if:false={showDot}>
+                        <div class="slds-m-left_x-small slds-m-top_xxx-small">
+                            <img style=" margin:auto; width:60%; height:60%;" src={reddot} />
+                        </div>
+                    </template> -->
+                </div>
+
+                <div class="slds-col slds-size_9-of-12">
+                    <label
+                        style="color:rgb(55,52,53); font-size:20px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Information</label>
+                    <Br />
+                    <div class="slds-m-top-x-small slds-m-bottom--small">
+                        <template if:true={record}>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Status:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cStatus}</label>
+                            <Br />
+
+                            <label
+                                style=" display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Description:&nbsp;</label>
+                            <label
+                                style=" display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cDes}</label>
+                            <label if:false={status} onclick={showMore}
+                                style=" display: inline-block;  color:rgb(29,84,156); font-size:14px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">
+                                Show more</label>
+                            <label if:true={status} onclick={showLess}
+                                style=" display: inline-block;  color:rgb(29,84,156); font-size:14px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">
+                                Show less</label>
+
+                            <Br />
+
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Estimator
+                                Name:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cEstimatorName}</label>
+                            <Br />
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Customer
+                                Name:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cCustomerName}</label>
+                            <Br />
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Start
+                                Date:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cStartdate}</label>
+                            <Br />
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Delivery
+                                Date:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cdeliverydate}</label>
+                            <Br />
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Total
+                                Time:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{ctotalTime}&nbsp;days</label>
+                            <Br />
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Opportunity:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cOpportunityName}</label>
+                            <Br />
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Date
+                                of Estimate:&nbsp;</label>
+                            <label
+                                style="display: inline-block;  color:rgb(55,52,53); font-size:16px; font-weight:400; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cCreatedDate}</label>
+                            <Br />
+                        </template>
+                    </div>
+
+                </div>
+                <div class="slds-col slds-size_2-of-12 slds-clearfix ">
+                    <div data-record-id={lid} class="slds-m-right_small slds-m-top_xx-small ">
+                        <img style=" margin:auto; width:55%; height:55%;" class="bevelOnImg slds-float_right" id={lid}
+                            onclick={navigateNext} />
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+
+
+</template>
