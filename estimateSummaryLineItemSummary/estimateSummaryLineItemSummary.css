@@ -1,0 +1,32 @@
+.bevelOnImgDuplicate {
+  content: url(/resource/1580989644000/duplicateforestimatesummaryscreen);
+}
+.bevelOnImgDuplicate:active {
+  content: url(/resource/1564732097000/OnClicks3duplicatebtn);
+
+  overflow: hidden;
+} 
+
+.bevelOnImgDelete {
+  content: url(/resource/1580989704000/deleteforestimatesummaryscreen);
+}
+.bevelOnImgDelete:active {
+  content: url(/resource/1564732132000/OnClicks3binbtn);
+
+  overflow: hidden;
+}
+
+.bevelOnImgExpand {
+  content: url(/resource/1580991997000/beforeClickExpandButton);
+}
+.bevelOnImgExpand:active {
+  content: url(/resource/1564732190000/OnClickExpandButton);
+
+  overflow: hidden;
+}
+.trybutton{
+  width:30%; padding: 2.5%; font-size: 16px; font-weight:bold; color:white; border-radius: 5px; text-align: center; font: size 25px; background-color:rgb(29, 84, 156)
+}
+.trybuttonL:active{
+  width:30%; background-color:white !important; font-weight:bold; color:#1D549C; margin-top:-2px; border:2px solid rgb(29, 84, 156); padding: 2.5%; font-size: 16px; font-weight:bold; border-radius: 5px; text-align: center; font: size 25px;
+}
