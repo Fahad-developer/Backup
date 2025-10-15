@@ -1,0 +1,17 @@
+/* .bevelBox
+{ 
+    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -4px -4px 4px rgba(0, 0, 0, .4);
+}
+  .shadowOnClick:active{
+    box-shadow: inset 0px 0px 0px rgba(255, 255, 255, .4), inset 0px -0px 0px rgba(0, 0, 0, .4);
+    
+  } */
+
+  .bevelBox
+{ 
+  background-color:rgb(232, 232, 233); color:rgb(29, 84, 156) !important; padding:1.5% 0%;
+}
+  .shadowOnClick:active{
+    background-color:white; color:rgb(29, 84, 156); border:2px solid rgb(29, 84, 156); margin-top:-2px; padding:1.5% 0%;
+    
+  }
