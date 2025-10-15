@@ -1,0 +1,181 @@
+<template>
+
+    <div style="background-color:Rgb(29,84,156);"
+        class="slds-grid slds-grid--vertical-align-center slds-wrap slds-p-vertical_large">
+        <div class="slds-col slds-size_2-of-12 " onclick={navigateNext}>
+            <img style="display:block; margin:auto; width:50%; height:50%;" src={backarrow} onclick={navigateNext} />
+        </div>
+
+        <div class="slds-col slds-size_6-of-12 slds-grid slds-grid--vertical-align-center ">
+            <label
+                style=" margin-left:2%; color:white; font-size:25px; font-weight:600; font-family: 'Segoe UI', Helvetica;">Estimate Overview</label>
+
+        </div>
+
+        <div class="slds-col slds-size_4-of-12 slds-text-align_right"> 
+          <div class="slds-m-right_medium slds-m-bottom_x-small">
+          <div class="bevelBoxForCusOpp shadowOnClickForCusOpp slds-align_absolute-center"
+             
+             onclick={navigateCustomer}>
+             <img src={customerIcon} width="20" height="20" style="padding-right: 2%">
+             <label style="padding-right: 1%">Customer</label> 
+          </div>
+        </div>
+
+        <div class="slds-m-right_medium">
+          <div class="bevelBoxForCusOpp shadowOnClickForCusOpp slds-align_absolute-center"
+             
+             onclick={navigateOpportunity}>
+             <img src={opportunityIcon} width="20" height="20" style="padding-right: 2%">
+             <label style="padding-right: 1%">Opportunity</label>
+          </div>
+        </div>
+       </div>
+
+    </div>
+
+    <div
+    style="width: 100%; background-color:Rgb(237,234,234)"
+    class="slds-grid slds-grid--vertical-align-center slds-p-vertical_small"
+  >
+    <div
+      style=" width: 100%;  background-color:rgb(255, 255, 255); box-shadow: -1.5px 0px 4px  #ccc;"
+      class="slds-grid slds-wrap slds-p-vertical--x-small"
+    >
+      <div
+        class="bevelBox shadowOnClick slds-col slds-size_6-of-12"
+        onclick={navigateNext}
+      >
+        <div style="margin-left:5px; border-right: 1px solid; " onclick={navigateNext}>
+          <img src={lefticon} width="15%" height="15%" onclick={navigateNext} />
+
+          <label
+            style="margin-left:2%; font-size:10.5pt; font-weight:600; font-family: 'Segoe UI', Helvetica; vertical-align: middle "
+            onclick={navigateNext}
+            >Estimate Details</label
+          >
+        </div>
+      </div>
+
+      <div
+        class="bevelBox shadowOnClick slds-col slds-size_6-of-12"
+        onclick={navigateRight}
+      >
+        <div style="margin-left:5px;" onclick={navigateRight}>
+          <img
+            src={Righticon}
+            width="15%"
+            height="15%"
+            onclick={navigateRight}
+          />
+
+          <label
+            style="margin-left:2%; font-size:10.5pt; font-weight:600; font-family: 'Segoe UI', Helvetica; vertical-align: middle "
+            onclick={navigateRight}
+            >Add New Line Item</label
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div style="width: 100%; height:50px;background-color:Rgb(237,234,234)"
+        class="slds-grid slds-grid--vertical-align-center">
+
+        <div style="height:100%;" class="slds-col slds-size_9-of-12 slds-grid slds-grid--vertical-align-center  ">
+            <label style="color:Rgb(29,84,156); font-size:20px; font-weight:600; font-family: 'Segoe UI', Helvetica;"
+                class="slds-m-left_small ">{estimateName}</label>
+        </div>
+
+        <div style="height:100%;" class="slds-col slds-size_3-of-12 slds-grid slds-grid--vertical-align-center">
+
+
+
+            <div style="width:90%; height:90%" class="slds-m-left_xxx-small ">
+
+            </div>
+            <div style="height:100%;">
+                <img class="bevelOnImgDelete" style="border-radius:15%;" width="90%" height="90%" onclick={openmodal}>
+            </div>
+
+            <!-- <div  class="slds-m-left_xxx-small "  >
+                        <img src={duplicateicon} width="90%" height="90%">   
+                </div> 
+               
+              <div  class="slds-m-left_none"  >
+                        <img src={deleteicon} width="90%" height="90%" onclick={openmodal} >   
+                </div> -->
+           
+                <template if:true={openmodel}>
+                    <div class="demo-only">
+                        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+                            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                            <div class="slds-modal__container">
+                                <header class="slds-modal__header">
+            
+                                    <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Delete!</h2>
+                                </header>
+                                <div class="slds-modal__content slds-p-around_medium slds-align_absolute-center" id="modal-content-id-1">
+                                    
+                                        <h2><b>Are you sure you want to delete this record?</b></h2><br />
+            
+                                    
+                                </div>
+                                <footer class="slds-modal__footer">
+            
+                                    <div class="slds-align_absolute-center">
+                                        <button
+                                          class="trybutton trybuttonL slds-m-right_small"
+                                          
+                                          onclick={closeModal}
+                                        >
+                                          Cancel
+                                        </button>
+                                        <button
+                                          class="trybutton trybuttonL slds-m-left_small"
+                                          
+                                          onclick={deleteEstimate}
+                                        >
+                                        Delete
+                                        </button>
+                                    </div>
+            
+                                    <!-- <button class="slds-button slds-button_brand slds-m-right_xxx-small"
+                                        style=" background-color:rgb(255, 255, 255); border-color:rgb(221, 219, 218); color:rgb(29,84,156);"
+                                        onclick={closeModal}>Cancel</button>&nbsp;
+                                    <button class="slds-button slds-button_brand slds-m-left_small"
+                                        style=" background-color:rgb(29,84,156);" onclick={deleteEstimate}>Delete</button> -->
+            
+                                    <!-- <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                                            <lightning-button label="Delete" variant="brand" onclick={deleteEstimate}></lightning-button> -->
+                                </footer>
+                            </div>
+                        </section>
+                        <div class="slds-backdrop slds-backdrop_open"></div>
+                    </div>
+                </template>
+
+
+</div>
+
+
+
+<!--  <div style="  margin-top:3%; border-right:1px solid #bdbfc1;"  class="slds-col slds-size_6-of-12">
+                     
+                    <div style="margin-left:5px;"  >
+                     <img src={lefticon} width="15%" height="15%">
+                     <label style="margin-left:2%;  color:Rgb(29,84,156); font-size:10.5pt; font-weight:600; font-family:Segoe UI; vertical-align: middle ">View Estimate Detail</label>
+                    </div>  
+                    
+            </div>
+
+                     <div style=" margin-top:3%;" class="slds-col slds-size_6-of-12">
+                     <div style="margin-left:5px;   " >
+                     <img src={Righticon} width="15%" height="15%">
+                    
+                     <label style="margin-left:2%;  color:Rgb(29,84,156); font-size:10.5pt; font-weight:600; font-family:Segoe UI; vertical-align: middle ">Add New Line Item</label>
+                     </div>  </div>
+                     -->
+
+</div>
+</template>
