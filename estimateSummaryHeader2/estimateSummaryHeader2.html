@@ -1,0 +1,86 @@
+<template>
+  <div
+    style="background-color:Rgb(29,84,156)"
+    class="slds-grid slds-grid--vertical-align-center slds-wrap slds-p-vertical_large "
+  >
+    <div class="slds-col slds-size_2-of-12  " onclick={navigateNext}>
+      <img
+        style="display:block; margin:auto; width:25px; height:25px;"
+        src={pic}
+        onclick={navigateNext}
+      />
+    </div>
+
+    <div class="slds-col slds-size_6-of-12 ">
+      <label
+        style=" display:inline-block; margin-left:2%; color:white; font-size:25px; font-weight:600; font-family: 'Segoe UI', Helvetica;"
+        >{estimateName}</label
+      >
+      <p
+        style=" margin-left:2%; color:white; font-size:14px; font-weight:600; font-family: 'Segoe UI', Helvetica;"
+      >
+        Details
+      </p>
+    </div>
+    <div class="slds-col slds-size_4-of-12 slds-text-align_right">
+      <div class="slds-align_absolute-center">
+        <label  
+        style="display:inline-block;color:white; font-size:16px; font-weight:600; font-family: 'Segoe UI', Helvetica;"
+        >Total</label>
+      </div>
+      <div class="slds-align_absolute-center">
+      <label 
+        style="display:inline-block; color:white; font-size:16px; font-weight:600; font-family: 'Segoe UI', Helvetica;"
+        >{currencychange}&nbsp;{GrandTotal}</label
+      >
+    </div>
+    </div>
+     <!-- <button class="slds-button slds-button_brand slds-m-left_small"
+                  style=" background-color:rgb(255, 0, 0);" id="refreshBtn" onclick={freshthedata}>refresh</button> -->
+  </div>
+
+  <div
+    style="width: 100%; background-color:Rgb(237,234,234)"
+    class="slds-grid slds-grid--vertical-align-center slds-p-vertical_small"
+  >
+    <div
+      style=" width: 100%;  background-color:rgb(255, 255, 255); box-shadow: -1.5px 0px 4px  #ccc;"
+      class="slds-grid slds-wrap slds-p-vertical--x-small"
+    >
+      <div
+        class="bevelBox shadowOnClick slds-col slds-size_6-of-12"
+        onclick={navigateLeft}
+      >
+        <div style="display: flex; align-items: center; padding-left: 250px; border-right: 1px solid; gap: 8px;" onclick={navigateLeft}>
+          <img src={lefticon} width="10%" height="10%" onclick={navigateLeft} />
+
+          <label
+            style="margin-left:2%; font-size:10.5pt; font-weight:600; font-family: 'Segoe UI', Helvetica; vertical-align: middle "
+            onclick={navigateLeft}
+            >Estimate Overview</label
+          >
+        </div>
+      </div>
+
+      <div
+        class="bevelBox shadowOnClick slds-col slds-size_6-of-12"
+        onclick={navigateRight}
+      >
+        <div style="display: flex; align-items: center; padding-left: 250px; border-right: 1px solid; gap: 8px;" onclick={navigateRight}>
+          <img
+            src={Righticon}
+            width="10%"
+            height="10%"
+            onclick={navigateRight}
+          />
+
+          <label
+            style="margin-left:2%; font-size:10.5pt; font-weight:600; font-family: 'Segoe UI', Helvetica; vertical-align: middle "
+            onclick={navigateRight}
+            >Add New Line Item</label
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
