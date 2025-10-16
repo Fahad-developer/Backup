@@ -1,0 +1,169 @@
+<template>
+  <div style="width:100%; background-color:#1d549c">
+    <div>
+      <template if:true={record}>
+        <div style="width:100%" class="slds-grid ">
+          <div class="slds-col slds-size_6-of-12 slds-m-top_medium slds-m-bottom_medium slds-p-left_medium">
+            <label
+              style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{estimateName}
+              &nbsp;</label>
+          </div>
+
+          <div class="slds-col slds-size_6-of-12 slds-m-top_medium slds-m-bottom_medium">
+            <label
+              style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cCustomerName}
+              &nbsp;</label>
+          </div>
+        </div>
+        <div style="width:100%" class="slds-grid slds-m-bottom_medium">
+          <div class="slds-col slds-size_6-of-12 slds-p-left_medium">
+            <label
+              style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cEstimatorName}
+              &nbsp;</label>
+          </div>
+
+          <div class="slds-col slds-size_6-of-12">
+            <label
+              style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">{cNoofLineItem}
+              &nbsp;</label>
+          </div>
+        </div>
+      </template>
+    </div>
+
+    <div style="width: 100%; background-color:Rgb(237,234,234)"
+      class="slds-grid slds-grid--vertical-align-center slds-p-vertical_small">
+      <div style=" width: 100%;  background-color:rgb(255, 255, 255); box-shadow: -1.5px 0px 4px  #ccc;"
+        class="slds-grid slds-wrap slds-p-vertical--x-small">
+        <div class="shadowOnClick bevelBox slds-col slds-size_6-of-12" onclick={navigateEstimateSummary}>
+          <div style="margin-left:5px; border-right: 1px solid; ">
+            <img src={lefticon} width="15%" height="15%" />
+
+            <label
+              style="margin-left:2%; font-size:10.5pt; font-weight:600; font-family: 'Segoe UI', Helvetica; vertical-align: middle ">Estimate
+              Details</label>
+          </div>
+        </div>
+
+        <div class="shadowOnClick bevelBox slds-col slds-size_6-of-12" onclick={addLineItem}>
+          <div style="margin-left:5px;">
+            <img src={Righticon} width="14.5%" height="14.5%" />
+
+            <label
+              style="margin-left:2%; font-size:10.5pt; font-weight:600; font-family: 'Segoe UI', Helvetica; vertical-align: middle ">Add
+              New Line Item</label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- <div class="slds-p-left_small slds-p-right_small slds-p-top_small slds-p-bottom_small">
+        <div
+          style="width:100%; padding: 2%; font-size: 16px; font-weight:bold; color:#1d549c; border-radius: 8px; text-align: center; font: size 25px; background-color:white"
+          onclick={addLineItem}>
+          <img src={plusIcon} style="margin-right: 5px;" width="30" height="30" onclick={navigateNext} />
+          <label>Add New Line Item</label>
+        </div>
+      </div> -->
+  </div>
+  <div style="width: 100%; height:50px;background-color:Rgb(237,234,234)"
+    class="slds-grid slds-grid--vertical-align-center">
+    <div style="height:100%;" class="slds-col slds-size_9-of-12 slds-grid slds-grid--vertical-align-center  ">
+      <label style="color:Rgb(29,84,156); font-size:22px; font-weight:600; font-family: 'Segoe UI', Helvetica;"
+        class="slds-m-left_small ">{cLineItemName}</label>
+    </div>
+    <div style="height: 100%;text-align: right;justify-content: flex-end;" class="slds-col slds-size_3-of-12 slds-grid slds-grid--vertical-align-center">
+      <div class="slds-m-left_xxx-small ">
+        <img class="bevelOnImgDuplicate" style="border-radius:15%;" onclick={openmodelDuplicate} width="50"
+          height="90%" />
+      </div>
+
+      <div class="slds-m-left_none" onclick={openmodal}>
+        <img class="bevelOnImgDelete" style="border-radius:15%;" width="50" height="90%" onclick={openmodal} />
+      </div>
+      <template if:true={openmodel}>
+        <div class="demo-only">
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true"
+            aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Delete!</h2>
+              </header>
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                <center>
+                  <h2><b>Are you sure you want to delete this record?</b></h2><br />
+
+                </center>
+              </div>
+              <footer class="slds-modal__footer">
+
+                <div class="slds-align_absolute-center">
+                  <button class="trybutton trybuttonL slds-m-right_small" onclick={closeModal}>
+                    Cancel
+                  </button>
+                  <button class="trybutton trybuttonL slds-m-left_small" onclick={deleteEstimate}>
+                    Delete
+                  </button>
+                </div>
+
+                <!-- <button class="slds-button slds-button_brand slds-m-right_xxx-small"
+                  style=" background-color:rgb(255, 255, 255); border-color:rgb(221, 219, 218); color:rgb(29,84,156);"
+                  onclick={closeModal}>Cancel</button>&nbsp;
+                <button class="slds-button slds-button_brand slds-m-left_small"
+                  style=" background-color:rgb(29,84,156);" onclick={deleteEstimate}>Delete</button> -->
+
+                <!-- <lightning-button label="Cancel" variant="neutral" onclick={closeModal}></lightning-button>
+                  &nbsp;&nbsp;&nbsp;&nbsp;
+                  <lightning-button label="Delete" variant="brand" onclick={deleteEstimate}></lightning-button> -->
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+      </template>
+      <template if:true={openmodelDuplicatee}>
+        <div class="demo-only">
+          <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-02" aria-modal="true"
+            aria-describedby="modal-content-id-2" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+              <header class="slds-modal__header">
+
+                <h2 id="modal-heading-02" class="slds-text-heading_medium slds-hyphenate">Duplicate Record!</h2>
+              </header>
+              <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-2">
+                <center>
+                  <h2><b>Are you sure you want to duplicate this record?</b></h2><br />
+
+                </center>
+              </div>
+              <footer class="slds-modal__footer">
+
+                <div class="slds-align_absolute-center">
+                  <button class="trybutton trybuttonL slds-m-right_small" onclick={closeModalDuplicate}>
+                    Cancel
+                  </button>
+                  <button class="trybutton trybuttonL slds-m-left_small" onclick={duplicateLineItem}>
+                    Duplicate
+                  </button>
+                </div>
+
+                <!-- <button class="slds-button slds-button_brand slds-m-right_xxx-small"
+                  style=" background-color:rgb(255, 255, 255); border-color:rgb(221, 219, 218); color:rgb(29,84,156);"
+                  onclick={closeModalDuplicate}>Cancel</button>&nbsp;
+                <button class="slds-button slds-button_brand slds-m-left_small"
+                  style=" background-color:rgb(29,84,156);" onclick={duplicateLineItem}>Duplicate</button> -->
+
+                <!-- <lightning-button  label="Cancel" variant="neutral" onclick={closeModalDuplicate}></lightning-button>&nbsp;&nbsp;&nbsp;&nbsp;
+                            <lightning-button label="Duplicate" variant="brand" onclick={duplicateLineItem}></lightning-button> -->
+              </footer>
+            </div>
+          </section>
+          <div class="slds-backdrop slds-backdrop_open"></div>
+        </div>
+      </template>
+    </div>
+  </div>
+
+</template>
