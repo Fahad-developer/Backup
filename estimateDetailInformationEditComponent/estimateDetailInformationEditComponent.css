@@ -1,0 +1,37 @@
+div input[readonly] {
+        padding-left: 1.75rem !important;  
+    }
+    .slds-input{
+        padding-left: 1.75rem !important;
+    }
+    
+    .slds-input-has-icon .slds-input__icon {
+        top: 56% !important;
+    }
+    .slds-icon_small, .slds-icon--small {
+        width: 1.5rem;
+        height: 1.5rem;
+        line-height: 2;
+    }
+
+    .show {
+        display: block;
+    }
+    .hide {
+        display: none;
+    }
+    /* .bevelBox
+{ 
+    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -4px -4px 4px rgba(0, 0, 0, .4);
+}
+  .shadowOnClick:active{
+    box-shadow: inset 0px 0px 0px rgba(255, 255, 255, .4), inset 0px -0px 0px rgba(0, 0, 0, .4);
+   
+  } */
+
+  .trybutton{
+    width:24%; padding: 2.5%; font-size: 16px; font-weight:bold; color:white; border-radius: 8px; text-align: center; font: size 25px; background-color:rgb(29, 84, 156)
+  }
+  .trybuttonL:active{
+    width:24%; background-color:white !important; font-weight:bold; color:#1D549C; margin-top:-2px; border:2px solid rgb(29, 84, 156); padding: 2.5%; font-size: 16px; font-weight:bold; border-radius: 8px; text-align: center; font: size 25px;
+  }
