@@ -1,0 +1,196 @@
+<template>
+    <div style="background-color: rgb(255, 255, 255); width:100%">
+        <header style="padding:10px;margin-top:-14px;color:rgb(29, 84, 156);
+        font-size:20pt;
+        font-weight:bold;
+        font-family:segoe UI">Edit estimate Detail</header>
+        <div class="slds-grid slds-grid_vertical-align-center" style="
+                    width: 100%;
+                    background-color: #B0C4DF;
+                    ">
+            <div class="slds-col slds-size_11-of-12">
+                <p style="
+                    padding: 10px;
+                    font-size: large;
+                    ">Information</p>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-p-right_small">
+                <img class="slds-float--right" src={dropdown}>
+            </div>
+        </div>
+
+        <template if:true={record}>
+            <div class=" slds-m-top_x-small">
+                <!-- <div class="slds-m-top_x-small"> -->
+                <Label
+                style="color:rgb(29, 84, 156);
+                font-size:16px;
+                font-weight:bold;
+                font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+                Status
+                </label>
+                <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+                <!-- </div> -->
+            <div class="slds-m-left_medium slds-m-right_medium">
+                <lightning-combobox name="progress" value={estimateStatus} id="estimateStatus"
+                     options={options} onchange={handleNameChange}> </lightning-combobox>
+            </div>
+            </div>
+            <div class=" slds-m-top_x-small">
+            <Label
+            style="color:rgb(29, 84, 156);
+            font-size:16px;
+            font-weight:bold;
+            font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+            Description
+            </label>
+            <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+            <div style="margin-bottom:0px; " class="slds-m-horizontal_medium">
+                <div class="slds-form-element__control slds-grow">
+                    <textarea onchange={handleNameChange} id="estimateDescription"
+                        style="border:2px solid rgb(29, 84, 156);" 
+                        class="slds-textarea"> {estimateDescription} </textarea>
+                </div>
+            </div>
+            </div>
+            <div>
+                    <Label
+                    style="color:rgb(29, 84, 156);
+                    font-size:16px;
+                    font-weight:bold;
+                    font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+                    Estimator Name
+                    </label>
+                    <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+                <div class="slds-form-element__control slds-grow slds-form-element slds-m-horizontal_medium">
+                    <c-lookp id="estimateEstimatorName" onsearch={estimatorHandleSearch}
+                        onselectionchange={estimatorHandleSelectionChange} onchange={handleNameChange}
+                        inval={estimator}>
+                    </c-lookp>
+                    <!-- <input onchange={handleNameChange} value={estimateEstimatorName} id="estimateEstimatorNamee"  style="border:2px solid rgb(29, 84, 156);" type="text"
+                    placeholder="Estimator Name" class="slds-input"> -->
+                </div>
+            </div>
+            <div>
+                <Label
+                style="color:rgb(29, 84, 156);
+                font-size:16px;
+                font-weight:bold;
+                font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+                Customer Name
+                </label>
+                <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+            <div class="slds-form-element__control slds-grow slds-form-element slds-m-horizontal_medium">
+                <c-lookce id="estimateCustomerName" onsearch={customerHandleSearch}
+                    onselectionchange={customerHandleSelectionChange} onchange={handleNameChange}
+                      inval={customer}
+                    >
+                </c-lookce>
+                <!-- <input onchange={handleNameChange} value={estimateEstimatorName} id="estimateEstimatorNamee"  style="border:2px solid rgb(29, 84, 156);" type="text"
+                placeholder="Estimator Name" class="slds-input"> -->
+            </div>
+        </div>
+            <div>
+                    <Label
+                    style="color:rgb(29, 84, 156);
+                    font-size:16px;
+                    font-weight:bold;
+                    font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+                    Start Date
+                    </label>
+                    <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+                <lightning-input type="date" class="slds-m-horizontal_medium" onchange={handleNameChange} name="input1"
+                    value={estimateStartDate} id="estimateStartDate" ></lightning-input>
+            </div>
+            <div>
+                    <Label
+                    style="color:rgb(29, 84, 156);
+                    font-size:16px;
+                    font-weight:bold;
+                    font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+                    Delievery Date
+                    </label>
+                    <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+                <lightning-input type="date" class="slds-m-horizontal_medium" onchange={handleNameChange} name="input1"
+                    value={estimateDelieveryDate} id="estimateDelieveryDate" >
+                </lightning-input>
+            </div>
+            <div style=" padding-bottom: 20px;" class=" slds-m-top_x-small">
+                    <Label
+                    style="color:rgb(29, 84, 156);
+                    font-size:16px;
+                    font-weight:bold;
+                    font-family:segoe UI, Helvetica;" class="slds-m-bottom_small slds-m-left_large">
+                    Opportunity Name
+                    </label>
+                    <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; " >&nbsp;*</label>
+
+                <div class="slds-form-element__control slds-grow slds-form-element slds-m-horizontal_medium">
+                    <c-looko id="estimateOpportunity" onsearch={opportunityHandleSearch}
+                        onselectionchange={opportunityHandleSelectionChange} inval={estimateOpportunity}
+                        onchange={handleNameChange} >
+                    </c-looko>
+                    <!-- <input onchange={handleNameChange} value={cName} id="estimateEstimatorNamee"  style="border:2px solid rgb(29, 84, 156);" type="text"
+                    placeholder="Estimator Name" class="slds-input"> -->
+                </div>
+            </div>
+
+
+
+
+
+
+        
+
+        </template>
+
+        <div class="slds-align_absolute-center slds-p-vertical--large">
+            <button
+              class="trybutton trybuttonL slds-m-right_small"
+              
+              onclick={navigateNextOnCancel}
+            >
+              Cancel
+            </button>
+            <button
+              class="trybutton trybuttonL slds-m-left_small"
+              
+              onclick={navigateNextOnSave}
+            >
+              Save
+            </button>
+          </div>
+
+        <!-- <div class="slds-align_absolute-center slds-p-vertical--small">
+            <button class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-right_small" style="width: 24%; background-color:#1D549C;"
+                onclick={navigateNextOnCancel}>Cancel</button>
+            <button class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-left_small" style="width: 24%; background-color:#1D549C;" onclick={navigateNextOnSave}>Save</button>
+        </div> -->
+    </div>
+    
+
+        <!-- <div class="slds-align_absolute-center slds-p-vertical--large">
+                    <Lightning-button  class={display} style="width: 24%"
+                        onclick={navigateNext}>Cancel</Lightning-button>
+                    <Lightning-button  class="slds-button slds-button_brand"
+                        style="width: 24%" onclick={navigateNext}>Save</Lightning-button>
+                </div> -->
+
+        <!-- <div class="slds-align_absolute-center slds-p-vertical--large">
+            <button class="slds-button slds-button_brand slds-m-right_small" style="width: 24%; background-color:#1D549C;"
+                onclick={navigateNextOnCancel}>Cancel</button>
+            <button class="slds-button slds-button_brand slds-m-left_small" style="width: 24%; background-color:#1D549C;" onclick={navigateNextOnSave}>Save</button>
+        </div> -->
+
+    
+
+
+
+
+</template>
