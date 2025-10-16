@@ -1,0 +1,1009 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('/resource/PoppinsFont') format('truetype');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+body,
+html {
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+.main-page {
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* #new-estimate-page {
+    left: 100%;
+} */
+
+.show-new-page .main-page {
+    transform: translateX(-100%);
+}
+
+.show-new-page .new-estimate-page {
+    transform: translateX(-100%);
+}
+
+.ses {
+    background-color: #fff;
+    box-shadow: 0px 0px 31px 0px #0000001A;
+    border-radius: 44px;
+    padding: 70px 0;
+    margin: 70px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.ses h1 {
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 100%;
+    color: #31165D;
+    margin: 24px 0 56px 0;
+    overflow: hidden;
+}
+
+.ses button {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    padding: 22px 90px;
+    outline: none;
+    border: none;
+    border-radius: 62px;
+    width: 500px;
+    cursor: pointer;
+}
+
+.ses button:nth-of-type(1) {
+    margin-bottom: 24px;
+    border: 2px solid #AF80FF;
+    background-color: #AF80FF;
+    color: #fff;
+}
+
+.ses button:nth-of-type(2) {
+    border: 2px solid #AF80FF;
+    background-color: #fff;
+    color: #000000;
+}
+
+
+.page {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    transition: transform 0.5s ease;
+}
+
+
+/* New Page Style  */
+.new-estimate-page h1 {
+    text-align: center;
+    color: #AF80FF;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 55px;
+    overflow: hidden;
+}
+
+.bbtnstyle {
+    position: absolute;
+    top: 76px;
+    cursor: pointer;
+}
+
+label {
+    color: #000000;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    width: 100%;
+}
+
+input[type="text"] {
+    padding: 16px 24px;
+    border: 2px solid #E7E7E7;
+    border-radius: 35px;
+    height: 50px;
+    /* opacity: 6%; */
+    width: 100%;
+    font-weight: 400;
+    background-color: #FAF7FF;
+    margin-top: 16px;
+}
+
+input::placeholder {
+    color: #808080;
+    font-weight: 400;
+    opacity: 1;
+}
+
+.neform {
+    margin-top: 32px;
+}
+
+.neform div {
+    display: flex;
+    gap: 80px;
+}
+
+.neform div:nth-of-type(1) {
+    margin-bottom: 32px;
+}
+
+.nwpf {
+    position: relative;
+    padding: 70px 0;
+    background-color: #fff;
+}
+
+
+/* New Line Item Style Start Here */
+.nlis {
+    background-color: #F9F5FF;
+    padding: 70px;
+}
+
+.nlis h2 {
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 44px;
+    color: #000000;
+    overflow: hidden;
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+
+/* Cancel and Save button Style Start hare  */
+.casbtn {
+    padding: 70px 0;
+    text-align: center;
+    background-color: #fff;
+}
+
+.casbtn button {
+    width: 190px;
+    height: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+}
+
+.casbtn button:nth-of-type(1) {
+    background-color: #F4EEFF;
+    color: #000000;
+}
+
+.casbtn button:nth-of-type(2) {
+    background-color: #AF80FF;
+    color: #fff;
+    margin-left: 24px;
+}
+
+
+/* Footer Style  start here  */
+.footer {
+    padding: 70px 0;
+    background-color: #31165D;
+}
+
+.footer h2 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 44px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.fweb {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid #fff;
+    padding-bottom: 32px;
+}
+
+.fweb div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 33.33%;
+}
+
+.fweb div a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.fsocial {
+    text-align: center;
+    margin-top: 32px;
+}
+
+.fsocial a {
+    margin: 0 4px;
+}
+
+/* New Iem Line style start  */
+.lidnli {
+    width: 600px;
+    padding: 16px 24px;
+    background-color: #fff;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    transition: all 1s linear;
+}
+
+.cmsli {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #B2B2B2;
+}
+
+.lidnli.active {
+    border-radius: 35px 35px 0 0;
+    transition: all 0.3s linear;
+}
+
+.lidnli.active svg circle {
+    fill: #AF80FF;
+}
+
+.cmsli.active svg circle {
+    fill: #AF80FF;
+}
+
+.lidnli span {
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000;
+}
+
+.cmsli span {
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000;
+}
+
+.lidnli-content {
+    width: 600px;
+    margin: auto;
+    height: 0;
+    background-color: #fff;
+    overflow: hidden;
+    transition: height 0.4s ease, padding 0.4s ease;
+    padding: 0 24px;
+    border-radius: 0px 0px 35px 35px;
+}
+
+.lidnli-content.open {
+    padding: 32px 24px 54px 24px;
+}
+
+.lidnli svg {
+    transition: transform 0.3s ease;
+}
+
+.cmsli svg {
+    transition: transform 0.3s ease;
+}
+
+.lidnli.active svg {
+    transform: rotate(180deg);
+}
+
+.cmsli.active svg {
+    transform: rotate(180deg);
+}
+
+textarea {
+    height: 120px;
+    width: 100%;
+    border: 2px solid #000;
+    opacity: 6%;
+    border-radius: 35px;
+    margin-top: 16px;
+}
+
+.lidnli-content input:nth-of-type(1) {
+    margin-bottom: 16px;
+}
+
+.litlinspan:first-child {
+    font-size: 18px;
+    line-height: 18px;
+    overflow: hidden;
+    font-weight: 600;
+    color: #000000;
+    margin-top: 32px;
+    display: block;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.litlinspan::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: #B2B2B2;
+    bottom: 0;
+    left: 0;
+}
+
+.custom-radio-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+/* Each option card */
+.custom-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 3px solid #AF80FF;
+    border-radius: 32px;
+    cursor: pointer;
+    user-select: none;
+    transition: border-color 0.2s, background-color 0.2s;
+    position: relative;
+}
+
+.custom-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* The circle */
+.radio-circle {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #B2B2B2BB;
+    border-radius: 50%;
+    position: relative;
+    flex: 0 0 20px;
+}
+
+.custom-radio.active {
+    border-color: #AF80FF;
+    background-color: #AF80FF;
+}
+
+.custom-radio.active .radio-circle {
+    border-color: #fff;
+}
+
+.custom-radio.active .radio-circle::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.custom-radio.active .radio-text {
+    color: #fff;
+}
+
+.custom-radio:hover {
+    border-color: #AF80FF;
+    background-color: #AF80FF;
+}
+
+.custom-radio:hover .radio-text {
+    color: #fff;
+}
+
+
+.custom-radio:hover .radio-circle {
+    border-color: #fff;
+}
+
+.rbtncon {
+    width: 600px;
+    margin: auto;
+}
+
+
+.cmsli {
+    position: relative;
+}
+
+.cmsli::before {
+    position: absolute;
+    content: "";
+    background-color: transparent;
+    width: 100%;
+    height: 12px;
+    left: 0;
+    top: 0;
+}
+
+.cmsli-content {
+    width: auto;
+}
+
+.cmsli-content.open {
+    padding: 32px 0px 54px 0px;
+}
+
+input[type="number"] {
+    padding: 16px 66px;
+    border: 2px solid #E7E7E7;
+    border-radius: 35px;
+    height: 50px;
+    width: 100%;
+    font-weight: 400;
+    background-color: #FAF7FF;
+    margin-top: 16px;
+    -moz-appearance: textfield;
+}
+
+.number-input input::-webkit-outer-spin-button,
+.number-input input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.number-input {
+    position: relative;
+}
+
+.number-input button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: none;
+    background-color: #AF80FF;
+    color: #fff;
+    font-size: 32px;
+}
+
+.number-input .minus {
+    position: absolute;
+    top: 41px;
+    left: 0;
+}
+
+.number-input .plus {
+    position: absolute;
+    right: 0;
+    top: 41px;
+}
+
+
+/* Add Measurement  */
+
+/* Switch Container */
+.measurement-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+/* Hide Default Checkbox */
+.measurement-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Slider Style */
+.measurement-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+}
+
+/* Slider Knob */
+.measurement-slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* ON State */
+.measurement-toggle:checked+.measurement-slider {
+    background-color: #AF80FF;
+}
+
+.measurement-toggle:checked+.measurement-slider:before {
+    transform: translateX(26px);
+}
+
+.measurement-header {
+    width: 600px;
+    padding: 16px 24px;
+    background-color: #fff;
+    border-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+    transition: all 1s linear;
+    margin-top: 16px;
+}
+
+.msspan {
+    overflow: hidden;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #000;
+}
+
+.measurement-header.active {
+    border-radius: 35px 35px 0 0;
+    transition: all 0.3s linear;
+}
+
+.msinner {
+    width: 600px;
+    margin: auto;
+    background-color: #fff;
+    padding: 16px 24px;
+    border-radius: 0 0 35px 35px;
+}
+
+/* Lenght style start here  */
+
+.leswitch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ftmmst {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.ftmmst:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.ftmmst {
+    background-color: #AF80FF;
+}
+
+input:checked+.ftmmst:before {
+    transform: translateX(24px);
+}
+
+.unit-text {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.lenftwrapper input[type="number"]{
+    width: 87%;
+    padding: 16px 24px;
+}
+
+.lenin{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.lenftwrapper{
+    margin-top: 24px;
+}
+
+/* Lenght style End here  */
+
+/* Circle Style Start Here  */
+.circle-radio-group {
+    display: flex;
+    /* gap: 12px; */
+    flex-wrap: wrap;
+    margin-top: 16px;
+    border: 2px solid #E7E7E7;
+    width: fit-content;
+    border-radius: 32px;
+}
+
+.circle-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    /* border: 3px solid #AF80FF; */
+    /* border-radius: 32px; */
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s;
+    position: relative;
+}
+
+.circle-radio input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.circle-radio.active {
+    border-color: #AF80FF;
+    background-color: #AF80FF;
+}
+
+.circle-radio.active .radio-circle {
+    border-color: #fff;
+}
+
+.circle-radio.active .radio-circle::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 50%;
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.circle-radio.active .radio-text {
+    color: #fff;
+}
+
+.circle-radio:hover {
+    border-color: #AF80FF;
+    background-color: #AF80FF;
+}
+
+.circle-radio:hover .radio-text {
+    color: #fff;
+}
+
+
+.circle-radio:hover .radio-circle {
+    border-color: #fff;
+}
+
+.cirlenftwrapper , .squlenftwrapper{
+    margin-top: 24px;
+}
+
+.cirlenftwrapper input[type="number"],
+.squlenftwrapper input[type="number"]{
+    width: 87%;
+    padding: 16px 24px;
+}
+
+.cirleswitch , .squleswitch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.cirunit-text , .squunit-text{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cirswitch , .squswitch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+}
+
+.cirswitch input , .squswitch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.cirftmmst , .squftmmst{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.cirftmmst:before , .squftmmst::before{
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3.5px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.cirftmmst , input:checked+.squftmmst{
+    background-color: #AF80FF;
+}
+
+input:checked+.cirftmmst:before , .input:checked+.squftmmst::before {
+    transform: translateX(24px);
+}
+
+.stogg{
+    margin-top: 24px;
+}
+
+.rcsqaure{
+    border-radius: 2px;
+}
+
+.cractive.active{
+    border-radius: 32px 0 0 32px;
+}
+
+.cractive:hover{
+border-radius: 32px 0 0 32px;
+}
+
+.croactive.active{
+    border-radius: 0 32px 32px 0;
+}
+
+.croactive:hover{
+    border-radius: 0 32px 32px 0;
+}
+
+.cractive{
+    border-right: 2px solid #E7E7E7;
+}
+
+.croactive{
+    border-left: 2px solid #E7E7E7;
+}
+
+.circle-radio-content{
+    position: relative;
+}
+
+.cirleswitch, .squleswitch{
+    position: absolute;
+    right: 0;
+}
+
+/* Circle Style Start End  */
+
+
+@media all and (max-width:767px) {
+
+    /* New extimate screen mobile style start  */
+
+    .container {
+        width: 100%;
+        padding: 0 25px;
+    }
+
+    .ses {
+        padding: 70px 24px;
+    }
+
+    .ses svg {
+        width: 150px;
+        line-height: 150px;
+    }
+
+    .ses h1 {
+        font-size: 44px;
+        margin: 24px 0 36px 0;
+    }
+
+    .ses button {
+        width: 100%;
+        border-radius: 24px;
+        padding: 24px;
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    .ses button:nth-of-type(1) {
+        margin-bottom: 18px;
+    }
+
+    /* New extimate screen mobile style End  */
+
+    /* Footer Mobile Style Start Here  */
+    .footer h2 {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .fweb {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .fweb div {
+        width: 100%;
+    }
+
+    /* Footer Mobile Style End HEre  */
+
+    /* second Page Input Style Start here  */
+    .new-estimate-page h1 {
+        font-size: 36px;
+        line-height: 36px;
+    }
+
+    .bbtnstyle svg {
+        width: 30px;
+        height: 30px;
+    }
+
+    .bbtnstyle {
+        top: 28px;
+    }
+
+    .neform div {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .neform div:nth-of-type(1) {
+        margin-bottom: 24px;
+    }
+
+    label{
+        font-size: 16px;
+        line-height: 16px;
+    }
+    /* second Page Input Style End here  */
+
+    /* New Line Item section Mobile Style Start Here   */
+    .nlis{
+        padding: 70px 0;
+    }
+
+    .lidnli{
+        width: 100%;
+    }
+
+    .lidnli-content{
+        width: 100%;
+    }
+
+    .cmsli-content.open {
+    padding: 32px 0px 40px 0px;
+}
+    /* New Line Item section Mobile Style End Here   */
+
+    /* measurement info Mobile Syle Start Here  */
+    .measurement-container{
+        padding: 0 25px;
+    }
+    .measurement-header{
+        width: 100%;
+    }
+
+    .msinner{
+        width: 100%;
+    }
+    /* measurement info Mobile Syle End Here  */
+
+    /* Cancel Save Button Mobile Style Start Here  */
+    .casbtn button:nth-of-type(2) {
+    margin-left: 0;
+    margin-top: 18px;
+}
+    /* Cancel Save Button Mobile Style End Here  */
+
+    /* Lenght Mobile Style Start Here  */
+    .lenftwrapper input[type="number"]{
+        width: 75%;
+    }
+
+    .circle-radio:hover{
+        border: none;
+        background-color: transparent;
+    }
+
+    .circle-radio.active{
+        background-color: transparent;
+    }
+
+    .circle-radio.active .radio-text{
+        color: inherit;
+    }
+
+    .circle-radio:hover .radio-circle{
+        border-color: #000;
+    }
+
+    .circle-radio.active .radio-circle::after{
+        background: #868282;
+    }
+
+    .cirleswitch, .squleswitch {
+    top: 6px;
+}
+    /* Lenght Mobile Style Start Here  */
+}
