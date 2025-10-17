@@ -1,0 +1,196 @@
+<template>
+  <div style="background-color: #fff">
+    <header
+      style="padding:10px;margin-top:-14px;color:rgb(29, 84, 156);
+    font-size:20pt;
+    font-weight:bold;
+    font-family:segoe UI"
+    >
+      New Line Item
+    </header>
+    <div
+      class="slds-grid slds-grid_vertical-align-center"
+      style="width: 100%;background-color: #B0C4DF;"
+    >
+      <div class="slds-col slds-size_11-of-12">
+        <p
+          style="padding: 10px; font-size: large; font-weight: 600; color: rgb(29, 84, 156); font-family: Segoe UI, Helvetica;"
+        >
+          Line Item Detail
+        </p>
+      </div>
+      <div class="slds-col slds-size_1-of-12 slds-p-right_small">
+        <img onclick={fold} class="slds-float--right" src={sdi} />
+      </div>
+    </div>
+    <div class={show_hide}>
+      <div class="slds-m-around_medium" style="width: 50%;">
+        <div class="slds-form-element__control slds-grow">
+          <Label
+            style="color:rgb(29, 84, 156);
+            font-size:16px;
+            font-weight:bold;
+            font-family:segoe UI, Helvetica;"
+            class="slds-m-bottom_small required"
+          >
+            Name
+          </Label>
+          <input
+            value={lineitemName}
+            onchange={handleLineItemNameChange}
+            style="border:2px solid rgb(29, 84, 156);"
+            type="string"
+            class="slds-input"
+          />
+        </div>
+      </div>
+      <div class="slds-m-around_medium" style="width: 50%;">
+        <div class="slds-form-element__control slds-grow">
+          <Label
+            style="color:rgb(29, 84, 156);
+            font-size:16px;
+            font-weight:bold;
+            font-family:segoe UI, Helvetica;"
+            class="slds-m-bottom_small"
+          >
+            Description
+          </Label>
+          <textarea
+            onchange={handleLineItemDescriptionChange}
+            style="border:2px solid rgb(29, 84, 156);"
+            class="slds-textarea"
+          ></textarea>
+        </div>
+      </div>
+      <div class="slds-m-around_medium">
+        <label
+          style="
+                color: #1D549C;
+                font-size: 15pt;
+                font-weight: bold;
+                font-family: segoe UI;
+            "
+          class="required"
+          >Line Item Type</label
+        >
+      </div>
+      <br />
+      <div class="slds-form-element  slds-m-around_medium">
+        <fieldset>
+          <div class="slds-form-element__control slds-m-top_medium">
+            <span class="slds-radio radio-button-span">
+              <input
+                type="radio"
+                onclick={radioSelect}
+                name="radioGroup"
+                id="radio-0-2"
+                value="option1"
+              />
+              <label id="materialandservice" for="radio-0-2" class={cssClass}>
+                <span
+                  class="slds-radio_faux"
+                  id="materialandservice_faux"
+                ></span>
+                <span class={msLabelClass} id="materialandservice_label"
+                  >Material & Service</span
+                >
+              </label>
+            </span>
+            <span class="slds-radio radio-button-span">
+              <input
+                type="radio"
+                onclick={radioSelect}
+                name="radioGroup"
+                id="radio-1-2"
+                value="option2"
+              />
+              <label
+                onclick={radioSelect}
+                id="material"
+                for="radio-1-2"
+                class={mClass}
+              >
+                <span class="slds-radio_faux" id="material_faux"></span>
+                <span class={mLabelClass} id="material_label">Material</span>
+              </label>
+            </span>
+            <span class="slds-radio radio-button-span">
+              <input
+                type="radio"
+                onclick={radioSelect}
+                name="radioGroup"
+                id="radio-2-2"
+                value="option3"
+              />
+              <label id="service" for="radio-2-2" class={sClass}>
+                <span class="slds-radio_faux" id="service_faux"></span>
+                <span class={sLabelClass} id="service_label">Service</span>
+              </label>
+            </span>
+          </div>
+        </fieldset>
+      </div>
+      <!-- <div class="slds-m-around_medium">
+        <label
+          style="
+                color: #1D549C;
+                font-size: 15pt;
+                font-weight: bold;
+                font-family: segoe UI;
+            "
+          class="required"
+          >DO YOU WANT TO ADD MEASUREMENT?</label
+        >
+      </div>
+      <br />
+      <div class="slds-form-element  slds-m-around_medium">
+        <fieldset>
+      <span class="slds-radio radio-button-span">
+        <input
+          type="radio"
+          onclick={showFun}
+          name="radioGroup"
+          id="radio-2-3"
+          value="option3"
+        />
+        <label id="check-15" for="radio-2-3">
+          <span class="slds-radio_faux" id="check-15_faux"></span>
+          <span id="check-15_label">Measurements</span>
+        </label>
+      </span>
+    </fieldset>
+    </div> -->
+      <div class="slds-m-around_medium">
+        <label
+          style="
+                color: #1D549C;
+                font-size: 15pt;
+                font-weight: bold;
+                font-family: segoe UI;
+            "
+          >DO YOU WANT TO ADD MEASUREMENT?</label
+        >
+      </div>
+     
+      <div class="slds-form-element slds-m-around_small">
+        <label class="slds-checkbox_toggle slds-grid">
+          <input
+            type="checkbox"
+            name="checkbox-toggle-15"
+            aria-describedby="checkbox-toggle-15"
+            onchange={showFun}
+          />
+          <span
+            id="checkbox-toggle-15"
+            class="slds-checkbox_faux_container"
+            aria-live="assertive"
+          >
+            <span class="slds-checkbox_faux"></span>
+            <span class="slds-checkbox_on">Yes</span>
+            <span class="slds-checkbox_off">No</span>
+          </span>
+        </label>
+      </div>
+    </div>
+  </div>
+</template>
