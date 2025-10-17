@@ -1,0 +1,140 @@
+<template>
+    <div style="background-color: rgb(255, 255, 255)">
+            <header
+            style="padding:10px;color:rgb(29, 84, 156);
+          font-size:20pt;
+          font-weight:bold;
+          font-family:segoe UI"
+          >
+          Edit Line Item
+          </header>
+       
+        <div class="slds-grid slds-grid_vertical-align-center" style="
+                width: 100%;
+                background-color: #B0C4DF;
+                ">
+            <div class="slds-col slds-size_11-of-12">
+                <p style="
+                padding: 10px;
+                font-size: large;
+                ">Line Item Detail</p>
+            </div>
+            <div class="slds-col slds-size_1-of-12 slds-p-right_small">
+                <img class="slds-float--right" src={dropdown}>
+            </div>
+        </div>
+        <div class="slds-m-around_medium">
+            <div class="slds-form-element__control slds-grow">
+                    <Label
+                    style="color:rgb(29, 84, 156);
+                    font-size:16px;
+                    font-weight:bold;
+                    font-family:segoe UI, Helvetica;" class="slds-m-bottom_small">
+                   Name
+                  </label>
+                  <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; ">&nbsp;*</label>
+                <input value={LineItemName} onchange={handleNameChange} id="LineItemName"
+                    style="border:2px solid rgb(29, 84, 156);" type="text" class="slds-input">
+            </div>
+        </div>
+        <div class="slds-m-around_medium">
+            <div class="slds-form-element__control slds-grow">
+                    <div class="slds-form-element__control slds-grow">
+                            <Label
+                            style="color:rgb(29, 84, 156);
+                            font-size:16px;
+                            font-weight:bold;
+                            font-family:segoe UI, Helvetica;" class="slds-m-bottom_small">
+                           Description
+                          </label>
+                          <!-- <label style="color:rgb(255, 0, 0); font-size:16px; font-weight:bold; font-family:segoe UI, Helvetica; ">&nbsp;*</label> -->
+                <textarea onchange={handleNameChange} style="border:2px solid rgb(29, 84, 156);"
+                    id="LineItemDescription" class="slds-textarea"> {LineItemDescription} </textarea>
+            </div>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_medium">
+            <label style="
+                color: #1D549C;
+                font-size: 15pt;
+                font-weight: bold;
+                font-family: segoe UI, Helvetica;
+            ">Line Item Type</label>
+            <label style="color:rgb(255, 0, 0); font-size:15pt; font-weight:bold; font-family:segoe UI, Helvetica; ">&nbsp;*</label>
+        </div>
+        <div class="slds-form-element slds-m-top_medium slds-m-bottom_medium">
+            <fieldset>
+                <div class="slds-form-element__control">
+                    <span class="slds-radio radio-button-span">
+                        <input type="radio" name="radioGroup" id="radio-0-2" value="option1">
+                        <label onclick={radioSelect} onchange={handleNameChange} id="materialandservice" for="radio-0-2"
+                            class={cssClass}>
+                            <span class="slds-radio_faux" id="materialandservice_faux"></span>
+                            <span class={msLabelClass} id="materialandservice_label">Material & Service</span>
+                        </label>
+                    </span>
+                    <span class="slds-radio radio-button-span">
+                        <input type="radio" name="radioGroup" id="radio-1-2" value="option2">
+                        <label onclick={radioSelect} onchange={handleNameChange} id="material" for="radio-1-2"
+                            class={mClass}>
+                            <span class="slds-radio_faux" id="material_faux"></span>
+                            <span class={mLabelClass} id="material_label">Material</span>
+                        </label>
+                    </span>
+                    <span class="slds-radio radio-button-span">
+                        <input type="radio" name="radioGroup" id="radio-2-2" value="option3">
+                        <label onclick={radioSelect} onchange={handleNameChange} id="service" for="radio-2-2"
+                            class={sClass}>
+                            <span class="slds-radio_faux" id="service_faux"></span>
+                            <span class={sLabelClass} id="service_label">Service</span>
+                        </label>
+                    </span>
+                </div>
+            </fieldset>
+        </div>
+
+        <div if:true={showButtons}>
+                
+            <div class="slds-align_absolute-center slds-p-vertical--large">
+                <button
+                  class="trybutton trybuttonL slds-m-right_small"
+                  
+                  onclick={navigateNextOnCancel}
+                >
+                  Cancel
+                </button>
+                <button
+                  class="trybutton trybuttonL slds-m-left_small"
+                  
+                  onclick={navigateNext}
+                >
+                  Save
+                </button>
+              </div>
+
+                  <!-- <div class="slds-align_absolute-center slds-p-vertical--large">
+                    <button
+                      class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-right_small"
+                      style="width: 24%; background-color:#1D549C;"
+                      onclick={navigateNextOnCancel}
+                    >
+                      Cancel
+                    </button>
+                    <button
+                      class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-left_small"
+                      style="width: 24%; background-color:#1D549C; "
+                      onclick={navigateNext}
+                    >
+                      Save
+                    </button>
+                  </div> -->
+            
+            <!-- <div class="bevelBox shadowOnClick slds-align_absolute-center slds-p-vertical--large">
+                <button class="slds-button slds-button_brand slds-m-right_small" style="width: 24%;background-color:#1D549C;"
+                    onclick={navigateNextOnCancel}>Cancel</button>
+                <button class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-left_small" style="width: 24%;background-color:#1D549C;" onclick={navigateNext}>Save</button>
+            </div> -->
+        </div>
+    </div>
+    </div>
+</template>
