@@ -1,0 +1,48 @@
+.radio-button-span {
+    height: 75px;
+}
+.radio-button-label {
+    padding: 10px;
+    border-radius:50px;
+    border:3px solid;
+    border-color:rgb(29, 84, 156);
+}
+.radio-button-label-selected {
+    padding: 10px;
+    border-radius:50px;
+    border:3px solid;
+    border-color:rgb(29, 84, 156);
+    background-color:rgb(29, 84, 156);
+}
+.radio-button-ball-selected {
+    padding: 10px;
+    border-radius:50px;
+    border:3px solid;
+    border-color:rgb(29, 84, 156);
+    background-color:rgb(29, 84, 156);
+}
+.radio-button-text-selected {
+    padding: 10px;
+    border-radius:50px;
+    border:3px solid;
+    border-color:rgb(29, 84, 156);
+    background-color:rgb(29, 84, 156);
+}
+.label-Selected {
+    color: white;
+}
+/* .bevelBox
+{ 
+    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -4px -4px 4px rgba(0, 0, 0, .4);
+}
+  .shadowOnClick:active{
+    box-shadow: inset 0px 0px 0px rgba(255, 255, 255, .4), inset 0px -0px 0px rgba(0, 0, 0, .4);
+    
+  } */
+
+  .trybutton{
+    width:24%; padding: 2.5%; font-size: 16px; font-weight:bold; color:white; border-radius: 8px; text-align: center; font: size 25px; background-color:rgb(29, 84, 156)
+  }
+  .trybuttonL:active{
+    width:24%; background-color:white !important; font-weight:bold; color:#1D549C; margin-top:-2px; border:2px solid rgb(29, 84, 156); padding: 2.5%; font-size: 16px; font-weight:bold; border-radius: 8px; text-align: center; font: size 25px;
+  }
