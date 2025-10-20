@@ -1,0 +1,63 @@
+/* .bevelBox
+{ 
+    box-shadow: inset 4px 4px 4px rgba(255, 255, 255, .4), inset -4px -4px 4px rgba(0, 0, 0, .4);
+}
+.shadowOnClick:active{
+  box-shadow: inset 0px 0px 0px rgba(255, 255, 255, .4), inset 0px -0px 0px rgba(0, 0, 0, .4);
+  
+} 
+
+.trybutton {
+  width: 24%;
+  padding: 2.5%;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+  text-align: center;
+  font: size 25px;
+  background-color: rgb(29, 84, 156)
+}
+
+.trybuttonL:active {
+  width: 24%;
+  background-color: white !important;
+  font-weight: bold;
+  color: #1D549C;
+  margin-top: -2px;
+  border: 2px solid rgb(29, 84, 156);
+  padding: 2.5%;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-align: center;
+  font: size 25px;
+}*/
+.trybutton {
+  width: 20%;
+  padding: 1rem 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #1D549C;
+  border: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.trybutton:hover {
+  background-color: #16437E;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.trybutton:active {
+  background-color: white !important;
+  color: #1D549C;
+  border: 2px solid #1D549C;
+  transform: translateY(0px);
+  box-shadow: none;
+}
