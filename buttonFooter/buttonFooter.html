@@ -1,0 +1,71 @@
+<template>
+    <!-- <footer class="actionButtons hidden oneActionBar oneCenterStage" aria-hidden="true" data-aura-rendered-by="426:2;a"> -->
+    <!-- <div class="slds-docked-form-footer" style="display: block; height:30%; position:fixed;">  -->
+
+    <!-- <div style="width:100%;background-color: rgb(237, 234, 234)">
+    <div>
+      <div class="slds-align_absolute-center slds-p-vertical--large">
+        <button
+          class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-right_small"
+          
+          onclick={navigateNext}
+        >
+          Cancel
+        </button>
+        <button
+          class="bevelBox shadowOnClick slds-button slds-button_brand slds-m-left_small"
+          
+          onclick={navigateSave}
+        >
+          Save
+        </button>
+      </div>
+    </div>
+  </div> -->
+
+    <div style="width:100%;background-color: rgb(237, 234, 234)">
+        <div>
+            <div class="slds-align_absolute-center slds-p-vertical--large">
+                <button class="trybutton trybuttonL slds-m-right_small" onclick={navigateNext}>
+                    Cancel
+                </button>
+                <button class="trybutton trybuttonL slds-m-left_small" onclick={navigateSave}>
+                    Save
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="slds-p-top_medium slds-p-bottom_medium" style="background-color:#1d549c;">
+        <div style="width:100%;">
+
+            <div class="slds-p-left_medium">
+                <label
+                    style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">
+                    Shape: {shape} &nbsp;</label>
+               <!--  <template if:true={dimension_typeLength}>
+                    <label
+                        style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">
+                        Length &nbsp;</label>
+                </template>-->
+             </div>
+
+<div class="slds-p-left_medium">
+    <label style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">
+                    Dimensions: {dimension_type} &nbsp;</label>
+</div>
+</div>
+<div style="width:100%">
+    <div class="slds-p-left_medium">
+        <label style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">
+                    Grand Total Cost: {grandTotalCostDisplay} &nbsp;</label>
+    </div>
+    <div class="slds-p-left_medium">
+        <label style="display: inline-block;  color:white; font-size:16px; font-weight:600; font-family:Segoe UI, Tahoma, Geneva, Verdana, sans-serif">Grand
+                    Total Price: {grandTotalPriceDisplay} &nbsp;</label>
+    </div>
+</div>
+</div>
+<!-- </div>  -->
+<!-- </footer> -->
+</template>
