@@ -1,0 +1,134 @@
+/* --- Global Styles (Unchanged) --- */
+.bevelBox {
+    background-color: rgb(232, 232, 233);
+    color: rgb(29, 84, 156) !important;
+    padding: 1.5% 0%;
+}
+.shadowOnClick:active {
+    background-color: white;
+    color: rgb(29, 84, 156);
+    border: 2px solid rgb(29, 84, 156);
+    margin-top: -2px;
+    padding: 1.5% 0%;
+}
+
+/* --- TOP HEADER BAR (Desktop) --- */
+.header-bar {
+    background-color: Rgb(29, 84, 156);
+}
+.header-icon {
+    display: block;
+    margin: auto;
+    width: 25px;
+    height: 25px;
+}
+.header-name-label {
+    display: block; /* Inline-block se block kar diya for spacing */
+    margin-left: 2%;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+}
+.header-details-text {
+    margin-left: 2%;
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+}
+.header-total-label,
+.header-total-value {
+    display: inline-block;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+}
+.total-label-wrapper,
+.total-value-wrapper {
+    /* To override slds-align_absolute-center and align right on desktop */
+    justify-content: flex-end;
+    padding-right: 15px; 
+}
+
+
+/* --- ACTION BUTTONS BAR (Desktop) --- */
+.action-bar-wrapper {
+    width: 100%;
+    background-color: Rgb(237, 234, 234);
+}
+.action-bar-inner {
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow: -1.5px 0px 4px #ccc;
+}
+
+/* FIX: Alignment aur Padding Fixes */
+.action-link-content {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* **THIS CENTERS THE CONTENT** (Fix for padding-left: 250px) */
+    padding: 10px 5px; /* Thoda padding */
+    border-right: 1px solid rgb(29, 84, 156); /* Estimate Overview ke liye border */
+    gap: 8px; /* Icon aur label ke beech space */
+}
+/* Last item se right border remove */
+.bevelBox.slds-col:last-child .action-link-content {
+    border-right: none;
+}
+
+.action-icon {
+    width: 50px;
+    height: 50px;
+}
+.action-label {
+    font-size: 12pt;
+    font-weight: 600;
+    font-family: 'Segoe UI', Helvetica, sans-serif;
+    vertical-align: middle;
+    margin-left: 2%; /* Gap is already there from parent flex */
+}
+
+
+/* --- MOBILE RESPONSIVENESS (Max-width: 767px) --- */
+@media (max-width: 767px) {
+    /* Top Bar: Adjustments */
+    .header-bar {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+    }
+    .header-name-label {
+        font-size: 18px; /* Name chota kiya */
+        margin-left: 10px;
+    }
+    .header-details-text {
+        margin-left: 10px;
+    }
+    
+    .header-total-container {
+        /* Total ko right se thoda door kiya */
+        padding-right: 15px;
+    }
+
+    /* Action Bar: Mobile Adjustments */
+    .action-bar-inner {
+        padding: 5px 0 !important;
+    }
+
+    .action-link-content {
+        /* FIX: Content ko center mein rakha */
+        justify-content: center;
+        padding: 8px 5px; 
+        gap: 5px;
+    }
+
+    /* Icon aur Label ko chota kiya */
+    .action-icon {
+        width: 16px;
+        height: 16px;
+    }
+    .action-label {
+        font-size: 10pt;
+    }
+}
