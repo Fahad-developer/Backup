@@ -1,0 +1,39 @@
+<template>
+    <div class="header-bar slds-grid slds-grid--vertical-align-center slds-wrap slds-p-vertical_large">
+        <div class="slds-col slds-size_2-of-12 slds-small-size_1-of-12" onclick={navigateNext}>
+            <img class="header-icon" src={pic} onclick={navigateNext} />
+        </div>
+
+        <div class="slds-col slds-size_6-of-12 slds-small-size_7-of-12 header-name-container">
+            <label class="header-name-label">{estimateName}</label>
+            <p class="header-details-text">Details</p>
+        </div>
+
+        <div class="slds-col slds-size_4-of-12 slds-small-size_4-of-12 slds-text-align_right header-total-container">
+            <div class="slds-align_absolute-center total-label-wrapper">
+                <label class="header-total-label">Total</label>
+            </div>
+            <div class="slds-align_absolute-center total-value-wrapper">
+                <label class="header-total-value">{currencychange}&nbsp;{GrandTotal}</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="action-bar-wrapper slds-p-vertical_small">
+        <div class="action-bar-inner slds-grid slds-wrap slds-p-vertical--x-small">
+            <div class="bevelBox shadowOnClick slds-col slds-size_6-of-12" onclick={navigateLeft}>
+                <div class="action-link-content" onclick={navigateLeft}>
+                    <img src={lefticon} class="action-icon" onclick={navigateLeft} />
+                    <label class="action-label" onclick={navigateLeft}>Estimate Overview</label>
+                </div>
+            </div>
+
+            <div class="bevelBox shadowOnClick slds-col slds-size_6-of-12" onclick={navigateRight}>
+                <div class="action-link-content" onclick={navigateRight}>
+                    <img src={Righticon} class="action-icon" onclick={navigateRight} />
+                    <label class="action-label" onclick={navigateRight}>Add New Line Item</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
